@@ -40,10 +40,10 @@ jobs:
         run: npm install -g allure-commandline --save-dev
       
       - name: Cypress run
-        run: npm run cy:run
+        run: npm run test:allure
 
-      - name: Reports Generate
-        run: npm run allure-report
+      #- name: Reports Generate
+       # run: npm run allure-report
        
       - uses: actions/upload-artifact@master
         with:

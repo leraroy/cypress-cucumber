@@ -46,5 +46,5 @@ Feature: Main page
 
   Scenario: See Twitter page, after click on "Follow on Twitter"
     When Click on "Twitter" link
-    Then See "Твиттер" page
+    Then See "Twitter" page
 

@@ -6,7 +6,7 @@ Feature: Blog page
     Scenario: The page should contain the header "Resource Hub"
         Then Page contain the header "Resource Hub"
 
-    Scenario Outline: Contain title <header>, after click <guide>
+    Scenario Outline: Contain header <header>, after click <guide>
         When Click <guide> button
         Then See <header> guide page
 

@@ -18,6 +18,7 @@ When('Click {string} button',(name)=>{
 });
 
 Then('See {string} guide page',(name)=>{
-    cy.title().should('include', name);
+    //cy.title().should('eq', name);
+    blogPage.getHeader.should('have.text', name);
 })
 

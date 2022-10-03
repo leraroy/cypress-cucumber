@@ -18,9 +18,9 @@ https://github.com/leraroy/cypress-cucumber/blob/master/cypress.config.js
 <li>Clone this repository</li>  
 <li>To run tests:</li>
    <ol>
-   <li>2.1. Run the "npm run test" command for run test on the chrome browser</li>  
-   <li>2.2. Run the "npm run test:firefox" command for run test on the firefox browser</li>  
-   <li>2.3. Run the "npm run cy:open" command to run test in chrome browser in cypress GUI</li>
+   <li>Run the "npm run test" command for run test on the chrome browser</li>  
+   <li>Run the "npm run test:firefox" command for run test on the firefox browser</li>  
+   <li>Run the "npm run cy:open" command to run test in chrome browser in cypress GUI</li>
    </ol>
    </ol>   
    

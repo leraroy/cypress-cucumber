@@ -1,4 +1,4 @@
-Feature: Contact Us page
+Feature: Contact Us page 
 
     Background:
         Given A user opens telnyx website on the contact us page

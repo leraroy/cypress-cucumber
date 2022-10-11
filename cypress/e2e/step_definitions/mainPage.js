@@ -1,4 +1,5 @@
-import { Given, When, Then, Before, After } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import accountData from "../helper/account.data";
 import mainPage from "../pages/main.page";
 import registerPage from "../pages/register.page";
 import resources from "./resources";
@@ -28,7 +29,7 @@ Then('See {string} page', (title) => {
 });
 
 When('I enter email', () => {
-  mainPage.enterEmail('qsbhbhsx@shdb.bdb');
+  mainPage.enterEmail(accountData.email);
 });
 
 When('Click on "Try For Free"', () => {
@@ -37,7 +38,6 @@ When('Click on "Try For Free"', () => {
 
 Then('See email on the {string} page', (title) => {
   cy.title().should('contain', title);
-  registerPage.email.should('have.value', 'qsbhbhsx@shdb.bdb');
 });
 
 When('I click open menu', () => {
@@ -49,11 +49,11 @@ When('Click on {string} button', (name) => {
 });
 
 When('Click on {string} link', (name)=>{
-  mainPage.clickOnLinks(name);
+  mainPage.clickOnLinks(name);  
 })
 
 Then('See all href Products on the main page', () => {
-  mainPage.listBtnInMenu.each((item, index, $listofElements) => {
+  mainPage.listBtnInMenu.each((item, index) => {
     cy.wrap(item.text()).should('contain', resources.textListProducts[index]);
   });
 });
@@ -65,6 +65,6 @@ Then('See all href Pricing on the main page', () => {
 });
 
 Then('See right email on the register page', ()=>{
-  registerPage.email.should('have.value', 'qsbhbhsx@shdb.bdb');
+  registerPage.email.should('have.value', accountData.email);
 });
 

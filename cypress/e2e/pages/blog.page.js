@@ -1,3 +1,5 @@
+const header='div>h1';
+
 class BlogPage{
     
     open(){
@@ -5,11 +7,11 @@ class BlogPage{
     }
 
     get getHeader(){
-        return cy.xpath('//h1');
+        return cy.get(header);
     }
 
     clickOnLearnElement(name){
-        cy.xpath('//main//*[text()="'+name+'"]').scrollIntoView().click();
+        cy.contains('h3', name).click();
     }
 
 }

@@ -3,7 +3,7 @@ const selectReason='select[id*="Reason"]';
 const selectPhone='select[id*="Phone"]';
 const submitBtn='[type="submit"]';
 const subscription='[name*="Subscription"]';
-const successMessage='//h1';
+const successMessage='div>h1';
 const errorMessage='form [role="alert"]';
 
 class ContactUsPage{
@@ -13,7 +13,7 @@ class ContactUsPage{
 
     dataInput(input, data){
         input=input.replace(/\s+/g, '');
-        cy.xpath('//form//input[contains(@name,"'+input+'")]').type(data);
+        cy.get(`input[name*=${input}]`).type(data);
     }
 
     selectReasonForContact(reason){
@@ -34,7 +34,7 @@ class ContactUsPage{
     }
 
     get successMessage(){
-       return cy.xpath(successMessage);
+       return cy.get(successMessage);
     }
     
     get errorMessage(){

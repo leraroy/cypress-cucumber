@@ -5,7 +5,8 @@ const emailInput='[name="email"]';
 const tryForFree='[type="submit"]';
 const signUp='ul>div>a'
 const acceptandClose='[aria-label*="close"]~div button';
-const openMenu='[aria-label="Open menu"]'
+const openMenu='[aria-label="Open menu"]';
+const talkExpert='nav a[href*="contact"]';
 
 class MainPage {
 
@@ -26,11 +27,11 @@ class MainPage {
     }
 
     clickOnButtonMenu(name){
-        cy.xpath('//nav//*[text()="'+name+'"]').click();
+        cy.contains('nav a, nav button', name).click();
     }
 
     clickOnLinks(name){       
-        cy.xpath('//footer//ul//a[contains(@href, "'+name.toLowerCase()+'")]').invoke('removeAttr', 'target').scrollIntoView().click();
+        cy.get(`li>a[href*=${name.toLowerCase()}]`).invoke('removeAttr', 'target').click();  
     }
    
     clickAcceptAndClose() {

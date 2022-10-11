@@ -5,6 +5,9 @@ const subscription = 'div[style] svg > rect';
 const submit = '[type="submit"]';
 const error = '[id*="error"]';
 const errorAfterClickCreate = '[id*="form_error"]>span';
+const email='#email';
+const name='#full_name';
+const password='#password';
 
 class SignUpPage {
 
@@ -12,16 +15,8 @@ class SignUpPage {
         cy.visit('/sign-up');
     }
 
-    get email() {
-        return cy.get('#email');
-    }
-
-    get name() {
-        return cy.get('#full_name')
-    }
-
-    get password() {
-        return cy.get('#password');
+    get email(){
+        return cy.get(email);
     }
 
     get getTextError() {
@@ -43,16 +38,16 @@ class SignUpPage {
         cy.get(submit).scrollIntoView().click();
     }
 
-    enterEmail(email) {
-        this.email.type(email);
+    enterEmail(email_txt){
+        this.email.type(email_txt);
     }
 
-    enterName(name) {
-        this.name.type(name);
+    enterName(name_txt){
+        cy.get(name).type(name_txt);
     }
 
-    enterPassword(password) {
-        this.password.type(password);
+    enterPassword(password_txt){
+        cy.get(password).type(password_txt);
     }
 
     register() {

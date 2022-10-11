@@ -14,7 +14,7 @@ Feature: Main page
   Scenario: Show email on register page, after enter email on main page
     When I enter email
     And Click on "Try For Free"
-    Then See email on the "Sign Up" page
+    Then See "Sign Up" page
     And See right email on the register page
 
   Scenario: Show Contact page after click on "Talk to an expert

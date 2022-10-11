@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --e2e --browser chrome --spec **/*.feature",
+    "test": "cypress run --browser chrome",
     "test:firefox": "cypress run --browser firefox",
     "cy:open": "cypress open --e2e --browser chrome",
     "cy:run": "cypress run --env allure=true",
@@ -20,7 +20,6 @@
     "@faker-js/faker": "^7.5.0",
     "@shelex/cypress-allure-plugin": "^2.32.1",
     "cypress": "^10.9.0",
-    "cypress-xpath": "^2.0.1",
     "esbuild": "^0.15.10"
   },
   "dependencies": {

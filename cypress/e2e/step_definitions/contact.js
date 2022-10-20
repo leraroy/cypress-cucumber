@@ -33,9 +33,6 @@ When('Click Submit button',()=>{
 
 Then('The user should see an error message {string}', (message)=>{
     contactUsPage.errorMessage.should('contain.text', message);
-    // .each((item)=> {
-    //     cy.wrap(item).should(($el) => expect($el.text().trim()).to.equal(message));
-    //   });
 })
 
 Then('The message should be given to user as {string}', (message)=>{
